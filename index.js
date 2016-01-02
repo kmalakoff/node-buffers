@@ -1,3 +1,4 @@
+var isBuffer = require('isbuffer');
 module.exports = Buffers;
 
 function Buffers (bufs) {
@@ -25,7 +26,7 @@ Buffers.prototype.push = function () {
 
 Buffers.prototype.unshift = function () {
     for (var i = 0; i < arguments.length; i++) {
-        if (!Buffer.isBuffer(arguments[i])) {
+        if (!isBuffer(arguments[i])) {
             throw new TypeError('Tried to unshift a non-buffer');
         }
     }

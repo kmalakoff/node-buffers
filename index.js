@@ -11,7 +11,7 @@ function Buffers (bufs) {
 
 Buffers.prototype.push = function () {
     for (var i = 0; i < arguments.length; i++) {
-        if (!Buffer.isBuffer(arguments[i])) {
+        if (!isBuffer(arguments[i])) {
             throw new TypeError('Tried to push a non-buffer');
         }
     }
